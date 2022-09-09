@@ -1,0 +1,83 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ebproof}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue
+}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{caution}[theorem]{Caution}
+
+\begin{document}
+
+\title{Quiz 2}
+
+\maketitle
+
+Answer the following true or false. If false, explain why.
+
+\begin{enumerate}
+\item This is a valid natural deduction proof of $B \vdash A \to B$
+\begin{displaymath}
+\begin{prooftree}
+	\hypo{B}
+	\infer1{A \to B}
+\end{prooftree}
+\end{displaymath}
+
+\item This is a valid natural deduction proof of $\neg (A \lor B) \vdash \neg A$ 
+\begin{displaymath}
+\begin{prooftree}
+	\hypo{\neg (A \lor B)}
+	\infer1{\neg A}
+	\infer0[0]{A}
+	\infer2{\bot}
+	\infer1[0]{\neg A}
+\end{prooftree}
+\end{displaymath}
+
+\item This is a correct truth table for $A \to (B \lor C)$  
+\begin{center}
+\begin{tabular}{| c | c | c | c |}
+	\hline
+	$A$ & $B$ & $C$ & $A \to (B \lor C)$ \\
+	\hline
+	$T$ & $T$ & $T$ & $T$ \\
+	\hline
+	$F$ & $T$ & $T$ & $F$ \\
+	\hline
+	$T$ & $F$ & $T$ & $T$ \\
+	\hline
+	$T$ & $T$ & $F$ & $T$ \\
+	\hline
+	$F$ & $F$ & $T$ & $T$ \\
+	\hline
+	$F$ & $T$ & $F$ & $T$ \\
+	\hline
+	$T$ & $F$ & $F$ & $F$ \\
+	\hline
+	$F$ & $F$ & $F$ & $T$ \\
+	\hline
+\end{tabular}
+\end{center}
+
+\end{enumerate}
+
+\end{document}

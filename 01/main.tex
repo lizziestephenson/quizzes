@@ -1,0 +1,73 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ebproof}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue
+}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{caution}[theorem]{Caution}
+
+\begin{document}
+
+\title{Quiz 1}
+
+\maketitle
+
+Determine which of the following are legitimate natural deduction proofs.
+\begin{enumerate}
+\item 
+\begin{displaymath}
+\begin{prooftree}
+	\infer0[0]{A \land B}
+	\infer1{A}
+	\infer1{A \lor B}
+	\infer1[0]{A \land B \to A \lor B}
+\end{prooftree}
+\end{displaymath}
+
+\item 
+\begin{displaymath}
+\begin{prooftree}
+	\hypo{A \lor B}
+	\infer1{A}
+	\hypo{A \to C}
+	\infer2{C}
+\end{prooftree}
+\end{displaymath}
+
+\item 
+\begin{displaymath}
+\begin{prooftree}
+	\hypo{(A \to B) \land (B \land A)}
+	\infer1{A \to B} 
+	\infer0[0]{A}
+	\infer2{B}
+	\hypo{(A \to B) \land (B \land A)}
+	\infer1{B \to A}
+	\infer0[0]{B}
+	\infer2{A}
+	\infer2[0]{A \leftrightarrow B}
+\end{prooftree}
+\end{displaymath}
+
+\end{enumerate}
+
+\end{document}
